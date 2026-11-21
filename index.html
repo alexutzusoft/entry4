@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entry4</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon-tab.svg">
+  <link rel="stylesheet" href="assets/styles/main.css">
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <span class="brand-icon" aria-hidden="true">
+        <img src="assets/icons/favicon.svg" width="16" height="17" alt="">
+      </span>
+      <span>Entry4</span>
+    </div>
+    <div class="header-meta">
+      <button id="firmware-toggle" class="firmware-toggle" type="button" title="select to switch firmware"
+        aria-label="switch firmware; selected 13.02-13.52" aria-pressed="false">[version] 13.02-13.52</button>
+      <span>&middot;</span>
+      <span id="payload-meta" class="clickable" title="select to switch payload">[payload] entry4</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <div id="state-title" class="state-title">ready</div>
+      <div id="state-detail" class="state-detail">press launch to run.</div>
+
+      <div class="progress-track">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+
+      <div class="action-row">
+        <button id="btn-launch" class="btn" disabled>launch</button>
+        <span id="progress-text" class="subtext" hidden>0%</span>
+      </div>
+
+      <div class="log-section">
+        <button id="log-toggle" class="log-toggle" disabled>terminal (0)</button>
+        <div id="log-box" class="log-box"></div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="src/app/main.js"></script>
+</body>
+
+</html>

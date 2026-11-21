@@ -1,0 +1,10 @@
+# Intermediate payload builds
+src/firmware/*/payloads/*.orig
+src/firmware/*/payloads/*.v2
+
+# OS / editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+*.swp

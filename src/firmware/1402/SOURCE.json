@@ -1,0 +1,51 @@
+{
+  "source": "https://github.com/ArabPixel/WebKitty",
+  "commit": "17a30a8de5ad008a28cf17324bf65eed9cea4fed",
+  "captured": "2026-11-14",
+  "verifiedIdentical": "2026-11-14 (afterglow.js, core.js, mem.js byte-identical to upstream main)",
+  "status": "experimental; not independently hardware-verified",
+  "upstreamPath": "src/slopkit-afterglow",
+  "files": [
+    {
+      "path": "afterglow.js",
+      "upstream": "src/slopkit-afterglow/afterglow.js",
+      "note": "vendored verbatim (AGPL-3.0-or-later); imports ./int64.js via local shim"
+    },
+    {
+      "path": "core.js",
+      "upstream": "src/slopkit-afterglow/core.js",
+      "note": "vendored verbatim (AGPL-3.0-or-later); slopkit WebKit primitive"
+    },
+    {
+      "path": "memory.js",
+      "upstream": "src/slopkit-afterglow/mem.js",
+      "note": "vendored from mem.js (AGPL-3.0-or-later); imports ./int64.js via local shim"
+    },
+    {
+      "path": "ps4_offsets.js (reference only, not shipped)",
+      "upstream": "src/slopkit-afterglow/ps4_offsets.js",
+      "note": "14.02 entry is Object.assign({}, 14.00, {}); webkit=13.52-identical. Local offsets.js carries the same fact in Entry4 format."
+    },
+    {
+      "path": "payloads/goldhen_v2.4b18.14.bin",
+      "upstream": "includes/payloads/HEN/goldhen_v2.4b18.14.bin",
+      "bytes": 298776,
+      "note": "WebKitty default GoldHEN for 14.02 (HENs.js GOLDHEN_DEFAULT; allowed on 14.02 alongside .13). Raw payload (leading 0xe9), loaded by afterglow tail via loadPayload -- no kpatches blob needed on this path."
+    },
+    {
+      "path": "payloads/entry4.bin",
+      "derivedFrom": "payloads/goldhen_v2.4b18.14.bin",
+      "bytes": 298776,
+      "sha256": "89a20f33cdfb7f0fbdb62937a7360b5c3964961e263eeb5749c646921eb1659f",
+      "note": "Selectable Entry4 variant with branded menu labels, startup notification and home-screen icon, and the GoldHEN menu icons removed."
+    }
+  ],
+  "localLayout": {
+    "int64.js": "shim re-exporting ../../shared/int64.js so vendored imports resolve unmodified",
+    "offsets.js": "Entry4-format 14.02 entry (webkit 13.52-identical); kernel stage owned by afterglow.js",
+    "runner.js": "Entry4-native runner (exports runExploit(ui, payloadName)); same WebKit setup as jb.js (ATTEMPTS from params, libkernel 0x4000 align, gadget gate, stub scan, prepareMany/runPrepared), sets sessionStorage.payload_path to the selected 14.02 build, passes page params as ctx.params, calls runAfterglow(ctx, {tries}), reports success = !!iface like finishUI(agOk)",
+    "config.js": "native Entry4 launcher settings (attempts=8, tries=4)"
+  },
+  "localChanges": "Native Entry4 UI integration (ui.log/setStatus/complete). Afterglow loads the selected payload, with Entry4 as the default. history.replaceState to index.html skipped (Entry4 never auto-runs on load; it would drop ?firmware=). afterglow.js/core.js/memory.js are unmodified apart from their ./int64.js resolution.",
+  "credits": "afterglow by m0zz / well0nez, via ArabPixel/WebKitty (AGPL-3.0-or-later). GoldHEN by SiSTR0. See NOTICE-AGPL.md."
+}
