@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<system_settings version="1.0" plugin="settings_root_plugin">
+
+  <setting_list id="id_goldhen_menu" title="Entry4" initial_focus_to="id_goldhen_toggle_ftp" icon="file://user/data/entry4.png">
+
+    <setting_list id="id_goldhen_debug_settings" title="Debug Settings">
+      <link id="id_game_package_installer" title="Package Installer" file="PkgInstaller/data/pkginstaller.xml"/>
+      <list id="id_goldhen_debug_settings_source" title="Package source" left_margin="94">
+        <list_item id="id_goldhen_debug_settings_source_usb" title="Usb [ usb:/ ]" value="0"/>
+        <list_item id="id_goldhen_debug_settings_source_hdd" title="Hdd [ hdd:/data/pkg/ ]" value="1"/>
+        <list_item id="id_goldhen_debug_settings_source_both" title="All" value="2"/>
+      </list>
+      <toggle_switch id="id_goldhen_debug_settings_search_subdirectories" title="Enable Search Subdirectories" value="0" left_margin="94"/>
+      <toggle_switch id="id_goldhen_debug_settings_bgft_enabled" title="Enable Background Installation" value="0" left_margin="94"/>
+      <toggle_switch id="id_goldhen_debug_settings_info_visible" title="Show Package Info" value="0" left_margin="94"/>
+      <toggle_switch id="id_goldhen_debug_settings_path_visible" title="Show Package Path" value="0" left_margin="94"/>
+      <list id="id_goldhen_debug_settings_enabled" title="Enable Debug Settings" description="⚠ Debug options are useful for developers. Enabling or disabling an option may cause an unexpected behaviour on your console. Use at your own risk.">
+        <list_item id="id_goldhen_debug_settings_enabled_off" title="Off" value="0"/>
+        <list_item id="id_goldhen_debug_settings_enabled_mini" title="Mini Menu" value="1"/>
+        <list_item id="id_goldhen_debug_settings_enabled_full" title="Full Menu" value="2"/>
+      </list>
+      <toggle_switch id="id_goldhen_game_debug_settings_enabled" title="Enable Game Debug Settings" value="0"/>
+    </setting_list>
+
+    <setting_list id="id_goldhen_cheat_settings" title="Cheat Settings">
+
+      <toggle_switch id="id_goldhen_toggle_cheat_menu" title="Enable Cheat Menu" value="1"/>
+      <list id="id_goldhen_cheat_menu_combo" title="Cheat Menu Combo" left_margin="94">
+        <list_item id="id_goldhen_cheat_menu_combo_off" title="Off" value="0"/>
+        <list_item id="id_goldhen_cheat_menu_combo_share" title="Long press Share button" value="1"/>
+        <list_item id="id_goldhen_cheat_menu_combo_ps" title="Fast double press PS button" value="2"/>
+      </list>
+      <toggle_switch id="id_goldhen_toggle_cheat_menu_game_options" title="Show Cheat Menu on Game Options" value="1" left_margin="94"/>
+      <toggle_switch id="id_goldhen_cheat_autoapply" title="Enable Auto-Apply on Game Start" description="You can't change this value while a game is running." value="0" left_margin="94"/>
+
+      <list id="id_goldhen_cheat_settings_titleid" title="Show TitleID">
+        <list_item id="id_goldhen_cheat_settings_titleid_off" title="Off" value="0"/>
+        <list_item id="id_goldhen_cheat_settings_titleid_titleid" title="Only TitleId" value="1"/>
+        <list_item id="id_goldhen_cheat_settings_titleid_appver" title="Only AppVer" value="2"/>
+        <list_item id="id_goldhen_cheat_settings_titleid_titleid_appver" title="TitleId &amp; AppVer" value="3"/>
+      </list>
+
+      <button id="id_goldhen_cheat_download" title="Update cheat archive" second_title="An internet connection may be needed for this feature."/>
+      <list id="id_goldhen_cheat_download_settings_source" title="Cheat source" description="Net: Install from Github.&#13;Usb: Install from usb:/UPDATE/cheats.zip.&#13;Hdd: Install from /user/data/GoldHEN/UPDATE/cheats.zip." left_margin="94">
+        <list_item id="id_goldhen_cheat_download_settings_source_github" title="Net [ GitHub ]" value="0"/>
+        <list_item id="id_goldhen_cheat_download_settings_source_usb" title="Usb [ usb:/UPDATE/cheats.zip ]" value="1"/>
+        <list_item id="id_goldhen_cheat_download_settings_source_hdd" title="Hdd [ hdd:.../UPDATE/cheats.zip ]" value="2"/>
+      </list>
+      <list id="id_goldhen_cheat_download_settings_selection" title="Cheat selection" description="Installed Games: Install cheats for games you have installed.&#13;All Cheats: Install all cheats in repository." left_margin="94">
+        <list_item id="id_goldhen_cheat_download_settings_selection_installed" title="Installed Games" value="0"/>
+        <list_item id="id_goldhen_cheat_download_settings_selection_all" title="All Cheats" value="1"/>
+      </list>
+
+    </setting_list>
+
+    <setting_list id="id_goldhen_plugin_settings" title="Plugin Settings">
+      <toggle_switch id="id_goldhen_plugin_settings_enabled" title="Enable Plugins Loader" second_title="Enable plugins based on the plugins.ini file. You can't change this value while a game is running." value="0"/>
+      <toggle_switch id="id_goldhen_aio_fix_plugin_settings_enabled" title="Enable AIO Fix Plugin" second_title="Enable plugin for all games without plugins.ini. You can't change this value while a game is running." value="0" third_title="It can be activated only if the aio fix plugin is installed at /data/GoldHEN/plugins/aio_fix_505.prx."/>
+      <toggle_switch id="id_goldhen_game_patch_plugin_settings_enabled" title="Enable Game Patch Plugin" second_title="Enable plugin for all games without plugins.ini. You can't change this value while a game is running." value="0" third_title="It can be activated only if the patch plugin is installed at /data/GoldHEN/plugins/game_patch.prx."/>
+
+      <button id="id_goldhen_patch_download" title="Update patch archive" second_title="An internet connection may be needed for this feature."/>
+      <list id="id_goldhen_patch_download_settings_source" title="Patch source" description="Net: Install from illusion's Github.&#13;Usb: Install from usb:/UPDATE/plugins.zip.&#13;Hdd: Install from /user/data/GoldHEN/UPDATE/plugins.zip." left_margin="94">
+        <list_item id="id_goldhen_patch_download_settings_source_github" title="Net [ GitHub ]" value="0"/>
+        <list_item id="id_goldhen_patch_download_settings_source_usb" title="Usb [ usb:/UPDATE/patch1.zip ]" value="1"/>
+        <list_item id="id_goldhen_patch_download_settings_source_hdd" title="Hdd [ hdd:.../UPDATE/patch1.zip ]" value="2"/>
+      </list>
+      <list id="id_goldhen_patch_download_settings_selection" title="Patch selection" description="Installed Games: Install cheats for games you have installed.&#13;All Cheats: Install all cheats in repository." left_margin="94">
+        <list_item id="id_goldhen_patch_download_settings_selection_installed" title="Installed Games" value="0"/>
+        <list_item id="id_goldhen_patch_download_settings_selection_all" title="All Patches" value="1"/>
+      </list>
+
+      <button id="id_goldhen_plugin_download" title="Update plugin archive" second_title="An internet connection may be needed for this feature."/>
+      <list id="id_goldhen_plugin_download_settings_source" title="Plugin source" description="Net: Install from Github.&#13;Usb: Install from usb:/UPDATE/plugins.zip.&#13;Hdd: Install from /user/data/GoldHEN/UPDATE/plugins.zip." left_margin="94">
+        <list_item id="id_goldhen_plugin_download_settings_source_github" title="Net [ GitHub ]" value="0"/>
+        <list_item id="id_goldhen_plugin_download_settings_source_usb" title="Usb [ usb:/UPDATE/plugins.zip ]" value="1"/>
+        <list_item id="id_goldhen_plugin_download_settings_source_hdd" title="Hdd [ hdd:.../UPDATE/plugins.zip ]" value="2"/>
+      </list>
+    </setting_list>
+
+    <setting_list id="id_goldhen_game_overlay" title="Game Overlay Settings">
+      <toggle_switch id="id_goldhen_game_overlay_fps_enabled" title="Enable FPS Counter" description="You can't change this value while a game is running." value="0"/>
+      <toggle_switch id="id_goldhen_game_overlay_fps_visible" title="Show FPS Counter" value="0" left_margin="94"/>
+
+      <toggle_switch id="id_goldhen_game_overlay_sysinfos_enabled" title="Enable SysInfo" description="You can't change this value while a game is running." value="0"/>
+      <toggle_switch id="id_goldhen_game_overlay_sysinfos_ram_usage_visible" title="Show RAM Usage" value="1" left_margin="94"/>
+      <toggle_switch id="id_goldhen_game_overlay_sysinfos_vram_usage_visible" title="Show VRAM Usage" value="1" left_margin="94"/>
+      <toggle_switch id="id_goldhen_game_overlay_sysinfos_cpu_usage_visible" title="Show CPU Usage" value="1" left_margin="94"/>
+      <toggle_switch id="id_goldhen_game_overlay_sysinfos_cpu_usage_avg_visible" title="Show CPU Usage Average" value="1" left_margin="94"/>
+      <toggle_switch id="id_goldhen_game_overlay_sysinfos_cpu_temp_visible" title="Show CPU Temp" value="1" left_margin="94"/>
+      <toggle_switch id="id_goldhen_game_overlay_sysinfos_soc_temp_visible" title="Show SOC Temp" value="1" left_margin="94"/>
+      <toggle_switch id="id_goldhen_game_overlay_sysinfos_thread_count_visible" title="Show Thread Count" value="1" left_margin="94"/>
+      <toggle_switch id="id_goldhen_game_overlay_sysinfos_ip_address_visible" title="Show IP Address" value="1" left_margin="94"/>
+
+      <list id="id_goldhen_game_overlay_text_position" title="Text Position">
+        <list_item id="id_goldhen_game_overlay_text_position_left" title="Left" value="0"/>
+        <list_item id="id_goldhen_game_overlay_text_position_right" title="Right" value="1"/>
+      </list>
+
+      <list id="id_goldhen_game_overlay_text_colour" title="Text Color">
+        <list_item id="id_goldhen_game_overlay_text_colour_white" title="White" value="0"/>
+        <list_item id="id_goldhen_game_overlay_text_colour_green" title="Green" value="1"/>
+        <list_item id="id_goldhen_game_overlay_text_colour_red" title="Red" value="2"/>
+        <list_item id="id_goldhen_game_overlay_text_colour_yellow" title="Yellow" value="3"/>
+        <list_item id="id_goldhen_game_overlay_text_colour_magenta" title="Magenta" value="4"/>
+        <list_item id="id_goldhen_game_overlay_text_colour_cyan" title="Cyan" value="5"/>
+      </list>
+
+      <toggle_switch id="id_goldhen_game_overlay_scanlines_enabled" title="Enable Scanlines" value="0" />
+      <list id="id_goldhen_game_overlay_scanlines_opacity" title="Opacity Level" left_margin="94">
+        <list_item id="id_goldhen_game_overlay_scanlines_opacity_1" title="1" value="1"/>
+        <list_item id="id_goldhen_game_overlay_scanlines_opacity_2" title="2" value="2"/>
+        <list_item id="id_goldhen_game_overlay_scanlines_opacity_3" title="3" value="3"/>
+        <list_item id="id_goldhen_game_overlay_scanlines_opacity_4" title="4" value="4"/>
+        <list_item id="id_goldhen_game_overlay_scanlines_opacity_5" title="5" value="5"/>
+      </list>
+    </setting_list>
+
+    <setting_list id="id_goldhen_servers_settings" title="Servers Settings">
+      <toggle_switch id="id_goldhen_toggle_ftp" title="Enable FTP Server" second_title="Listening on port 2121. Autodecrypt enabled. MTRW to enable R/W on system partitions." third_title="Credits: xerpi, idc, vortex, Al-Azif &amp; hippie68" value="0"/>
+      <toggle_switch id="id_goldhen_toggle_binloader" title="Enable PayLoader Server" second_title="Listening on port 9090. Supporting ELF and BIN formats via TCP and HTTP POST." value="0"/>
+
+      <setting_list id="id_goldhen_klog_settings" title="KLog Server">
+        <toggle_switch id="id_goldhen_toggle_klog_tty_redirect" title="Enable TTY Redirect" second_title="Shows user prints in klog. It could give some lag in case of excess of logs." value="0"/>
+      </setting_list>
+    </setting_list>
+
+  <setting_list id="id_goldhen_utils" title="Utilities">
+    <setting_list id="id_goldhen_utils_payloader" title="PayLoader">
+      <setting_list id="id_goldhen_utils_payloader_launchpad" title="LaunchPad"  second_title="List of payloads to be launched manually. Paths: /data/payloads /usbX/payloads /disc/payloads /disc/extras/payloads"></setting_list>
+      <setting_list id="id_goldhen_utils_payloader_autorun" title="AutoRun Queue"  second_title="List of payloads to be launched automatically. Hold L1 during boot to skip."></setting_list>
+    </setting_list>
+  </setting_list>
+
+    <setting_list id="id_goldhen_settings" title="Settings">
+      <toggle_switch id="id_goldhen_toggle_app_suspend" title="Enable Rest Mode Support" description="Keeps GoldHEN alive after suspension" key="/SYSTEM/POWER/suspend_to_ram"/>
+      <toggle_switch id="id_goldhen_toggle_pppoe_patch" title="Enable PPPoE Patch" second_title="Prevents the console from being exploited again via PPPwn, which could cause instability." value="0"/>
+      <toggle_switch id="id_goldhen_toggle_bdapp_autokill" title="Enable BD-App AutoKill" second_title="BD-App will be automatically closed whenever GoldHEN is started." value="0"/>
+      <toggle_switch id="id_goldhen_toggle_bdapp_autoeject" title="Enable AutoEject" second_title="BD will be automatically ejected whenever GoldHEN is started." value="0" left_margin="94"/>
+      <setting_list id="id_goldhen_datetime_settings" title="Date and Time">
+        <button id="id_goldhen_datetime_update" title="Update Date and Time" second_title="An internet connection may be needed for this feature."/>
+        <list id="id_goldhen_datetime_update_source" title="Update Source" left_margin="94">
+          <list_item id="id_goldhen_datetime_update_source_net" title="Net [ time1.google.com ]" value="0"/>
+          <list_item id="id_goldhen_datetime_update_source_fakedate" title="Fake Date [ 2025/01/01 ]" value="1"/>
+        </list>
+        <toggle_switch id="id_goldhen_datetime_autoupdate" title="Enable Auto Update Date and Time" second_title="An update will be made at every GoldHEN startup." value="0"/>
+      </setting_list>
+    </setting_list>
+
+  </setting_list>
+
+</system_settings>

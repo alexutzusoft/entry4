@@ -15,7 +15,7 @@ export class Entry4App {
     this.isWarmedUp = false;
     this.warmupStart = Date.now();
     this.warmupTimer = null;
-    this.payloads = { "13.02-13.52": "entry4", "14.02": "entry4" };
+    this.payloads = { "13.02-13.52": "entry4", "14.02": "entry4d" };
     this.firmware = "13.02-13.52";
     const requested = new URLSearchParams(window.location.search).get("firmware");
     if (requested === "14.00" || requested === "14.02") this.firmware = requested;
@@ -73,6 +73,9 @@ export class Entry4App {
     if (this.firmware === "14.02" && this.payloads[this.firmware] === "goldhen") {
       return "goldhen v2.4b18.14";
     }
+    if (this.payloads[this.firmware] === "entry4d") {
+      return "Entry4D";
+    }
     return this.payloads[this.firmware];
   }
 
@@ -108,8 +111,14 @@ export class Entry4App {
 
   togglePayload() {
     if (this.isRunning || this.isBundledFirmware) return;
-    const payload = this.payloads[this.firmware] === "entry4" ? "goldhen" : "entry4";
-    this.payloads[this.firmware] = payload;
+    if (this.firmware === "14.02") {
+      const cur = this.payloads[this.firmware];
+      const next = cur === "entry4d" ? "entry4" : cur === "entry4" ? "goldhen" : "entry4d";
+      this.payloads[this.firmware] = next;
+    } else {
+      const payload = this.payloads[this.firmware] === "entry4" ? "goldhen" : "entry4";
+      this.payloads[this.firmware] = payload;
+    }
     this.updatePayloadUI();
     this.log("payload", `switched payload to ${this.activePayload}`);
   }

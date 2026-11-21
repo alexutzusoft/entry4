@@ -68,7 +68,7 @@ let mainMf = null;
 let mainOrig = null;
 let mainArmed = false;
 
-export async function runExploit(ui, payloadName = "entry4") {
+export async function runExploit(ui, payloadName = "entry4d") {
   if (running) throw new Error("14.02 is already running");
   running = true;
   currentUI = ui;
@@ -347,9 +347,8 @@ export async function runExploit(ui, payloadName = "entry4") {
         window.jailbreakSuccess = function () {};
       } catch (e) {}
     }
-    const isEntry4 = payloadName === "entry4";
-    const payloadFile = isEntry4 ? "entry4.bin" : "goldhen_v2.4b18.14.bin";
-    const payloadLabel = params.get("payload") ? "payload" : isEntry4 ? "entry4" : "goldhen v2.4b18.14";
+    const payloadFile = payloadName === "entry4d" ? "entry4d.bin" : payloadName === "entry4" ? "entry4.bin" : "goldhen_v2.4b18.14.bin";
+    const payloadLabel = params.get("payload") ? "payload" : payloadName === "entry4d" ? "Entry4D" : payloadName === "entry4" ? "entry4" : "goldhen v2.4b18.14";
     try {
       sessionStorage.setItem("payload_path", "src/firmware/1402/payloads/" + payloadFile);
     } catch (e) {
