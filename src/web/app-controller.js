@@ -7,7 +7,7 @@
  */
 
 import { detectFirmware, supportsFirmware, loadRuntime } from "./firmware-registry.js";
-import { Entry4View } from "./view.js";
+import { Entry4View } from "./app-view.js";
 
 export class Entry4App {
   constructor() {
